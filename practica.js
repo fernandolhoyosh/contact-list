@@ -42,13 +42,13 @@ function printContacts(){
     });
 }
 
-const mensagge = `Welcome!\n
+const message = `Welcome!\n
 - Para agregar contactos utilize la función 'addContact("contactoNuevo");'
 - Para eliminar un contacto existente utilize la función 'deleteContact("contacto");'
 - Para imprimir los contactos presentes en la lista utilize la función 'printContacts();'`;
 
 alert("Hola!, Abre la consola");
-console.log(mensagge);
+console.log(message);
 
 //addContact("Luka Modric");                                      // Llamo la funcion añadir contacto nuevo (ingreso el nombre y apellido del nuevo contacto)
 
