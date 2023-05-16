@@ -12,10 +12,13 @@ const arrayContactList = [
 
 arrayContactList.sort();                                                            // Ordeno la lista de contactos de A - Z
 
+const ObjectContactList = {};
+ 
+
 //funcion para añadir un nuevo contacto a la lista
 
-function addContact(newContact){                                                    // configuro un parametro para añadir el nombre del contacto nuevo
-    arrayContactList.push(newContact);                                              // agrego el elemento al array
+function addContact(id, nombres, apellidos, telefono, ciudad, direccion){            // configuro un parametro para añadir el nombre del contacto nuevo
+    ObjectContactList.                                              // agrego el elemento al array
     console.log(`Contacto ${newContact} agregado`);                                 // imprimo por consola el aviso de contacto agregado
     arrayContactList.sort();                                                        // Vuelvo a ordenar mi array de forma ascendente
     //console.log(arrayContactList);                                                // imprimo mi array
@@ -30,7 +33,7 @@ const deleteContact = (contact) => {                                            
                 arrayContactList.splice(i,1);                                       // eliminamos el elemento capturando la posicion del index
         }   
     }
-    //console.log(arrayContactList);                                                // imprimo el array modififcado nuevamente
+    //console.log(arrayContactList);                                                // imprimo el array modificado nuevamente
 };
 
 // funcion para imprimir los contactos presentes del array por consola
@@ -47,7 +50,7 @@ const message = `Welcome!\n
 - Para eliminar un contacto existente utilize la función 'deleteContact("contacto");'
 - Para imprimir los contactos presentes en la lista utilize la función 'printContacts();'`;
 
-alert("Hola!, Abre la consola");
+//alert("Hola!, Abre la consola");
 console.log(message);
 
 //addContact("Luka Modric");                                      // Llamo la funcion añadir contacto nuevo (ingreso el nombre y apellido del nuevo contacto)
