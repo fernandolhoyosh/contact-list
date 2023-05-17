@@ -1,6 +1,6 @@
 /* defino mi array con una lista de contactos predefinida */
 
-const arrayContactList = [
+let arrayContactList = [
                             "Fernando Hoyos", 
                             "Ada Hernandez", 
                             "Jair Oquendo", 
@@ -10,12 +10,24 @@ const arrayContactList = [
                             "Cristiano Ronaldo"
                         ];
 
-arrayContactList.sort();                                                            // Ordeno la lista de contactos de A - Z
+arrayContactList.sort(); // Ordeno la lista de contactos de A - Z
+  
+ /*  const objetoListaContactos = arrayContactList.map(nombreCompleto => {
+    const [nombres, apellidos] = nombreCompleto.split(" ");
+    return {id:null, nombres, apellidos, telefono:null, ubicaciones:null };
+  });
+  
+  //console.log(objetoListaContactos);
+
+    arrayContactList = objetoListaContactos;
+
+  console.log(arrayContactList);
+  console.log(typeof arrayContactList); */
+
+
 
 
 //---------------------------------------------------------------------------------------------------------------------------------//
-
-const arrayContactLista = [];
 
 //funcion para añadir un nuevo contacto a la lista array
 
@@ -34,14 +46,14 @@ function addContact(id, nombres, apellidos, telefono, ciudad, direccion){
     
     objetoNewContact.ubicaciones = objetoUbicaciones;
 
-    arrayContactLista.push(objetoNewContact);
+    arrayContactList.push(objetoNewContact);
 
 }
 
 addContact(1063175407,"fernando","hoyos",3022684502,"lorica","calle 3 2c-58");
 addContact(14256398,"andres","hernandez",3168547896,"monteria","planeta tierra");
 
-console.log(arrayContactLista);
+console.log(arrayContactList);
 
 // funcion flecha para eliminar un contacto existente en la lista
 
