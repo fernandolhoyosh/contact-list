@@ -12,20 +12,17 @@ let arrayContactList = [
 
 arrayContactList.sort(); // Ordeno la lista de contactos de A - Z
   
- /*  const objetoListaContactos = arrayContactList.map(nombreCompleto => {
+  const objetoDividirNombres = arrayContactList.map(nombreCompleto => {
     const [nombres, apellidos] = nombreCompleto.split(" ");
     return {id:null, nombres, apellidos, telefono:null, ubicaciones:null };
   });
   
   //console.log(objetoListaContactos);
 
-    arrayContactList = objetoListaContactos;
+    arrayContactList = objetoDividirNombres;
 
-  console.log(arrayContactList);
+/*   console.log(arrayContactList);
   console.log(typeof arrayContactList); */
-
-
-
 
 //---------------------------------------------------------------------------------------------------------------------------------//
 
@@ -55,17 +52,21 @@ addContact(14256398,"andres","hernandez",3168547896,"monteria","planeta tierra")
 
 console.log(arrayContactList);
 
+
 // funcion flecha para eliminar un contacto existente en la lista
 
-const deleteContact = (contact) => {                                                
-    for (let i = 0; i < arrayContactList.length; i++) {                             
-        if (arrayContactList[i] === contact) {                                              
-                console.log(`Contacto ${arrayContactList[i]} eliminado`);           
-                arrayContactList.splice(i,1);                                       
-        }   
+const deleteContact = (contact) => {      
+
+    for (const key in arrayContactList) {
+        if (arrayContactList[key].nombres === contact) {
+            console.log(`Contacto ${arrayContactList[key].nombres} ${arrayContactList[key].apellidos} eliminado`);   
+            arrayContactList.splice(key,1);
+        }
     }
-    //console.log(arrayContactList);                                
+
 };
+
+//deleteContact("fernando");
 
 // funcion para imprimir los contactos presentes del array por consola
 
@@ -76,16 +77,6 @@ function printContacts(){
     });
 }
 
-const message = `Welcome!\n
-- Para agregar contactos utilize la función 'addContact("contactoNuevo");'
-- Para eliminar un contacto existente utilize la función 'deleteContact("contacto");'
-- Para imprimir los contactos presentes en la lista utilize la función 'printContacts();'`;
 
-//alert("Hola!, Abre la consola");
-console.log(message);
 
-//addContact("Luka Modric");                                      // Llamo la funcion añadir contacto nuevo (ingreso el nombre y apellido del nuevo contacto)
-
-//deleteContact("Fernando Hoyos");                                // Llamo la funcion eliminar contacto existente (ingreso el nombre del contacto a eliminar)
-
-printContacts();                                                // Llamo la funcion imprimir contactos presentes en la lista
+//printContacts();                                                // Llamo la funcion imprimir contactos presentes en la lista
