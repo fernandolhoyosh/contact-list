@@ -12,28 +12,47 @@ const arrayContactList = [
 
 arrayContactList.sort();                                                            // Ordeno la lista de contactos de A - Z
 
-const ObjectContactList = {};
- 
 
-//funcion para añadir un nuevo contacto a la lista
+//---------------------------------------------------------------------------------------------------------------------------------//
 
-function addContact(id, nombres, apellidos, telefono, ciudad, direccion){            // configuro un parametro para añadir el nombre del contacto nuevo
-    ObjectContactList.                                              // agrego el elemento al array
-    console.log(`Contacto ${newContact} agregado`);                                 // imprimo por consola el aviso de contacto agregado
-    arrayContactList.sort();                                                        // Vuelvo a ordenar mi array de forma ascendente
-    //console.log(arrayContactList);                                                // imprimo mi array
+const arrayContactLista = [];
+
+//funcion para añadir un nuevo contacto a la lista array
+
+function addContact(id, nombres, apellidos, telefono, ciudad, direccion){ 
+
+    const objetoNewContact = {};
+    const objetoUbicaciones = {};
+    
+    objetoNewContact.id = id;
+    objetoNewContact.nombres = nombres;
+    objetoNewContact.apellidos = apellidos;
+    objetoNewContact.telefono = telefono;
+    
+    objetoUbicaciones.ciudad = ciudad;
+    objetoUbicaciones.direccion = direccion;
+    
+    objetoNewContact.ubicaciones = objetoUbicaciones;
+
+    arrayContactLista.push(objetoNewContact);
+
 }
+
+addContact(1063175407,"fernando","hoyos",3022684502,"lorica","calle 3 2c-58");
+addContact(14256398,"andres","hernandez",3168547896,"monteria","planeta tierra");
+
+console.log(arrayContactLista);
 
 // funcion flecha para eliminar un contacto existente en la lista
 
-const deleteContact = (contact) => {                                                // configuro el parametro para buscar el contacto a eliminar
-    for (let i = 0; i < arrayContactList.length; i++) {                             // recorro con un for los elementos del array
-        if (arrayContactList[i] === contact) {                                      // si el elemento del array es exactamente igual al contacto ingresado           
-                console.log(`Contacto ${arrayContactList[i]} eliminado`);           // imprimo pro consola el aviso de contacto eliminado
-                arrayContactList.splice(i,1);                                       // eliminamos el elemento capturando la posicion del index
+const deleteContact = (contact) => {                                                
+    for (let i = 0; i < arrayContactList.length; i++) {                             
+        if (arrayContactList[i] === contact) {                                              
+                console.log(`Contacto ${arrayContactList[i]} eliminado`);           
+                arrayContactList.splice(i,1);                                       
         }   
     }
-    //console.log(arrayContactList);                                                // imprimo el array modificado nuevamente
+    //console.log(arrayContactList);                                
 };
 
 // funcion para imprimir los contactos presentes del array por consola
