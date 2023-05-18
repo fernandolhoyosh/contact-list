@@ -10,16 +10,16 @@ let arrayContactList = [
                             "Cristiano Ronaldo"
                         ];
 
-arrayContactList.sort(); // Ordeno la lista de contactos de A - Z
+/* arrayContactList.sort(); // Ordeno la lista de contactos de A - Z */
+
+ // creo un nuevo objeto diviendo el nombre y apellido del array original
   
   const objetoDividirNombres = arrayContactList.map(nombreCompleto => {
     const [nombres, apellidos] = nombreCompleto.split(" ");
     return {id:null, nombres, apellidos, telefono:null, ubicaciones:null };
   });
-  
-  //console.log(objetoListaContactos);
 
-    arrayContactList = objetoDividirNombres;
+    arrayContactList = objetoDividirNombres; // reseteo el array asignandole el nuevo objeto co nals propiedades definidas
 
 /*   console.log(arrayContactList);
   console.log(typeof arrayContactList); */
@@ -43,15 +43,11 @@ function addContact(id, nombres, apellidos, telefono, ciudad, direccion){
     
     objetoNewContact.ubicaciones = objetoUbicaciones;
 
-    arrayContactList.push(objetoNewContact);
+    arrayContactList.push(objetoNewContact); //agrego el objeto al final del arry
+
+    console.log("Contacto agregado");
 
 }
-
-addContact(1063175407,"fernando","hoyos",3022684502,"lorica","calle 3 2c-58");
-addContact(14256398,"andres","hernandez",3168547896,"monteria","planeta tierra");
-
-console.log(arrayContactList);
-
 
 // funcion flecha para eliminar un contacto existente en la lista
 
@@ -66,7 +62,6 @@ const deleteContact = (contact) => {
 
 };
 
-//deleteContact("fernando");
 
 // funcion para imprimir los contactos presentes del array por consola
 
@@ -77,6 +72,11 @@ function printContacts(){
     });
 }
 
+// agrego dos nuevos contactos
 
+addContact(1063175407,"fernando","hoyos",3022684502,"lorica","calle 3 2c-58");
+addContact(14256398,"andres","hernandez",3168547896,"monteria","planeta tierra");
 
-//printContacts();                                                // Llamo la funcion imprimir contactos presentes en la lista
+//deleteContact("fernando");
+
+printContacts();                                                // Llamo la funcion imprimir contactos presentes en la lista
