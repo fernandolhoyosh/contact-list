@@ -59,8 +59,13 @@ const deleteContact = (contact) => {
             arrayContactList.splice(key,1);
         }
     }
-
 };
+
+//expresion de funcion para actualizar un contacto
+
+const updateContact = function(id, name, lastName, phone, city, address){
+    
+}
 
 
 // funcion para imprimir los contactos presentes del array por consola
