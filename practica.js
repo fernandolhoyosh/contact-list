@@ -16,10 +16,10 @@ let arrayContactList = [
   
   const objetoDividirNombres = arrayContactList.map(nombreCompleto => {
     const [nombres, apellidos] = nombreCompleto.split(" ");
-    return {id:null, nombres, apellidos, telefono:null, ubicaciones:null };
+    return {id:null, nombres, apellidos, telefono:null, ubicaciones:{ciudad:null, direccion:null} };
   });
 
-    arrayContactList = objetoDividirNombres; // reseteo el array asignandole el nuevo objeto co nals propiedades definidas
+    arrayContactList = objetoDividirNombres; // reseteo el array asignandole el nuevo objeto con las propiedades definidas
 
 /*   console.log(arrayContactList);
   console.log(typeof arrayContactList); */
@@ -30,20 +30,17 @@ let arrayContactList = [
 
 function addContact(id, nombres, apellidos, telefono, ciudad, direccion){ 
 
-    const objetoNewContact = {};
-    const objetoUbicaciones = {};
+    const objectNewContact = {};
+    objectNewContact.ubicaciones = {};
     
-    objetoNewContact.id = id;
-    objetoNewContact.nombres = nombres;
-    objetoNewContact.apellidos = apellidos;
-    objetoNewContact.telefono = telefono;
-    
-    objetoUbicaciones.ciudad = ciudad;
-    objetoUbicaciones.direccion = direccion;
-    
-    objetoNewContact.ubicaciones = objetoUbicaciones;
+    objectNewContact.id = id;
+    objectNewContact.nombres = nombres;
+    objectNewContact.apellidos = apellidos;
+    objectNewContact.telefono = telefono;
+    objectNewContact.ubicaciones.ciudad = ciudad;
+    objectNewContact.ubicaciones.direccion = direccion;
 
-    arrayContactList.push(objetoNewContact); //agrego el objeto al final del arry
+    arrayContactList.push(objectNewContact); //agrego el objeto al final del array
 
     console.log("Contacto agregado");
 
@@ -82,12 +79,22 @@ const updateContact1 = function(index, id, name, lastName, phone, city, address)
 
 const updateContact2 = function(index, propiedad, valor){
 
-    const objectUbication = {};
+    if (arrayContactList[index].ubicaciones.hasOwnProperty(propiedad)) {
+        arrayContactList[index].ubicaciones[propiedad] = valor;
+        console.log("Contacto actualizado");
+    }
+    else if (arrayContactList[index].hasOwnProperty(propiedad) == true) {
+        arrayContactList[index][propiedad] = valor;
+        console.log("Contacto actualizado");
+        console.log(arrayContactList);
+    }
+    else{
+        console.log(`El campo ${propiedad} no existe en el objeto`);
+    }
+}
 
-  if (arrayContactList[index].hasOwnProperty(propiedad) == true) {
-        
-  }
-
+const updateContact3 = function(){
+    
 }
 
 
