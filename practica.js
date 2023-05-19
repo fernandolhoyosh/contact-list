@@ -79,4 +79,4 @@ addContact(14256398,"andres","hernandez",3168547896,"monteria","planeta tierra")
 
 //deleteContact("fernando");
 
-printContacts();                                                // Llamo la funcion imprimir contactos presentes en la lista
+//printContacts();                                                // Llamo la funcion imprimir contactos presentes en la lista
