@@ -63,8 +63,31 @@ const deleteContact = (contact) => {
 
 //expresion de funcion para actualizar un contacto
 
-const updateContact = function(id, name, lastName, phone, city, address){
-    
+const updateContact1 = function(index, id, name, lastName, phone, city, address){
+
+    const objectUbication = {};
+
+   arrayContactList[index].id = id;
+   arrayContactList[index].nombres = name;
+   arrayContactList[index].apellidos = lastName;
+   arrayContactList[index].telefono = phone;
+   objectUbication.ciudad = city;
+   objectUbication.direccion = address;
+   arrayContactList[index].ubicaciones = objectUbication;
+
+   console.log("Contacto actualizado");
+   console.log(arrayContactList);
+
+}
+
+const updateContact2 = function(index, propiedad, valor){
+
+    const objectUbication = {};
+
+  if (arrayContactList[index].hasOwnProperty(propiedad) == true) {
+        
+  }
+
 }
 
 
