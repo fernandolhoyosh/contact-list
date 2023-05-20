@@ -10,7 +10,7 @@ let arrayContactList = [
                             "Cristiano Ronaldo"
                         ];
 
-/* arrayContactList.sort(); // Ordeno la lista de contactos de A - Z */
+console.log(arrayContactList); // imprimo los elementos del array predefinido
 
  // creo un nuevo objeto diviendo el nombre y apellido del array original
   
@@ -20,9 +20,6 @@ let arrayContactList = [
   });
 
     arrayContactList = objetoDividirNombres; // reseteo el array asignandole el nuevo objeto con las propiedades definidas
-
-/*   console.log(arrayContactList);
-  console.log(typeof arrayContactList); */
 
 //------_---------------------------------------------------------------------------------------------------------------------------//
 
@@ -58,7 +55,7 @@ const deleteContact = (contact) => {
     }
 };
 
-//expresion de funcion para actualizar un contacto
+//expresion de funcion para actualizar todas las propeidades un contacto ingresando la posicion deseada
 
 const updateContact1 = function(index, id, name, lastName, phone, city, address){
 
@@ -77,6 +74,8 @@ const updateContact1 = function(index, id, name, lastName, phone, city, address)
 
 }
 
+// expresion de funcion para modificar solo una propiedad pasand ocomo parametros la poscion del array, la propiedad del objeto y el valor a actualizar
+
 const updateContact2 = function(index, propiedad, valor){
 
     if (arrayContactList[index].ubicaciones.hasOwnProperty(propiedad)) {
@@ -93,10 +92,6 @@ const updateContact2 = function(index, propiedad, valor){
     }
 }
 
-const updateContact3 = function(){
-    
-}
-
 
 // funcion para imprimir los contactos presentes del array por consola
 
@@ -107,11 +102,15 @@ function printContacts(){
     });
 }
 
+//NOTA: las llamadas de funciones abajo las hice directamnete desde la consola para explicar mejro el funcionamiento del codigo
+
 // agrego dos nuevos contactos
 
-addContact(1063175407,"fernando","hoyos",3022684502,"lorica","calle 3 2c-58");
-addContact(14256398,"andres","hernandez",3168547896,"monteria","planeta tierra");
+//addContact(1063175407,"fernando","hoyos",3022684502,"lorica","calle 3 2c-58");
+//addContact(14256398,"andres","hernandez",3168547896,"monteria","planeta tierra");
 
-//deleteContact("fernando");
+//updateContact2(1,"id",789);                                     // Llamada de funcion para actualizar una propiedad de un contacto
+
+//deleteContact("fernando");                                      // Llamada de funcion paar eliminar un contacto
 
 //printContacts();                                                // Llamo la funcion imprimir contactos presentes en la lista
